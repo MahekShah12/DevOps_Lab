@@ -41,33 +41,41 @@ public class RegistrationTest {
             Alert alert = wait.until(ExpectedConditions.alertIsPresent());
             System.out.println("Valid Data Test: " + alert.getText());
             alert.accept();
-            driver.findElement(By.id("email")).clear();
+
+            driver.findElement(By.xpath("//input[@value='Reset']")).click();
+
+            driver.findElement(By.id("name")).sendKeys("Mahek Shah");
+            driver.findElement(By.id("mobile")).sendKeys("9876543210");
             driver.findElement(By.id("email")).sendKeys("invalidEmail");
 
             driver.findElement(By.xpath("//input[@value='Submit']")).click();
 
             alert = wait.until(ExpectedConditions.alertIsPresent());
-            System.out.println("Invalid Email Test Passed: " + alert.getText());
+            System.out.println("Invalid Email Test: " + alert.getText());
             alert.accept();
 
-            driver.findElement(By.id("mobile")).clear();
+            driver.findElement(By.xpath("//input[@value='Reset']")).click();
+
+            driver.findElement(By.id("name")).sendKeys("Mahek Shah");
+            driver.findElement(By.id("email")).sendKeys("mahek@gmail.com");
             driver.findElement(By.id("mobile")).sendKeys("123");
 
             driver.findElement(By.xpath("//input[@value='Submit']")).click();
 
             alert = wait.until(ExpectedConditions.alertIsPresent());
-            System.out.println("Invalid Mobile Test Passed: " + alert.getText());
+            System.out.println("Invalid Mobile Test: " + alert.getText());
             alert.accept();
+
             driver.findElement(By.xpath("//input[@value='Reset']")).click();
 
             driver.findElement(By.xpath("//input[@value='Submit']")).click();
 
             alert = wait.until(ExpectedConditions.alertIsPresent());
-            System.out.println("Empty Field Test Passed: " + alert.getText());
+            System.out.println("Empty Field Test: " + alert.getText());
             alert.accept();
 
             driver.findElement(By.xpath("//input[@value='Reset']")).click();
-            System.out.println(" Reset Button Working");
+            System.out.println("Reset Button Working");
 
         } catch (Exception e) {
             System.out.println("Test Failed");
