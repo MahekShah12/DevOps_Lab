@@ -19,7 +19,7 @@ public class RegistrationTest {
 
         try {
 
-            driver.get("http://127.0.0.1:5500/index.html");
+            driver.get("file:///C:/ProgramData/Jenkins/.jenkins/workspace/Registrations/index.html");
 
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")));
             System.out.println("Page loaded successfully");
