@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, sans-serif;
+    background-image: url('contactus_banner.webp');
+    background-size: cover;
+}
+
+form{
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:7px;
+    margin-top:5px;
+}
+
+input[type="radio"]{
+    width:auto;
+}
+
+input[type="submit"], input[type="reset"]{
+    margin-top:15px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+}
+
+input[type="reset"]{
+    background:#f44336;
+}
